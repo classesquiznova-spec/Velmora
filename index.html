@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0d1726">
+  <meta name="description" content="VELMORA — Better things for everyday life. Discover thoughtfully selected everyday products.">
+  <meta property="og:title" content="VELMORA — Better things for everyday life.">
+  <meta property="og:description" content="Thoughtfully selected everyday finds, designed for modern life.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta name="pinterest-rich-pin" content="true">
+  <title>VELMORA — Better things for everyday life.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="announcement" class="announcement"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <button class="icon-btn mobile-menu" id="openNav" aria-label="Open menu">☰</button>
+        <a href="#top" class="brand" id="brandLink" aria-label="VELMORA home">VELMORA</a>
+        <nav class="desktop-nav" id="desktopNav"></nav>
+        <button class="cart-btn" id="openCart" aria-label="Open shopping cart">
+          <span>Bag</span><b id="cartCount">0</b>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad" id="heroSection">
+        <div class="hero-copy">
+          <span class="eyebrow" id="heroKicker"></span>
+          <h1 id="heroTitle"></h1>
+          <p id="heroDescription"></p>
+          <a class="btn btn-primary" id="heroCta" href="#products"></a>
+        </div>
+        <div class="hero-art" id="heroArt" aria-hidden="true">
+          <div class="hero-orb orb-one"></div>
+          <div class="hero-orb orb-two"></div>
+          <div class="hero-card">
+            <span>VELMORA</span>
+            <strong>Everyday,<br>elevated.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad product-section" id="products">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CURATED FOR YOU</span>
+            <h2 id="productsTitle">Featured Finds</h2>
+          </div>
+          <select id="sortProducts" class="select" aria-label="Sort products">
+            <option value="newest">Newest</option>
+            <option value="low">Price low-high</option>
+            <option value="high">Price high-low</option>
+            <option value="manual">Featured order</option>
+          </select>
+        </div>
+        <div class="category-row" id="categoryRow"></div>
+        <div class="product-grid" id="productGrid"></div>
+        <div id="emptyProducts" class="empty-state hidden">No products match this selection.</div>
+      </section>
+
+      <section class="benefits section-pad" id="benefitsSection">
+        <div class="benefit" id="benefit1"></div>
+        <div class="benefit" id="benefit2"></div>
+        <div class="benefit" id="benefit3"></div>
+      </section>
+
+      <section class="faq section-pad" id="faqSection">
+        <div class="section-heading simple">
+          <div><span class="eyebrow">NEED TO KNOW</span><h2>FAQ</h2></div>
+        </div>
+        <div id="faqList" class="faq-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer section-pad">
+      <div class="footer-top">
+        <div>
+          <a class="brand footer-brand" href="#top" id="footerBrand">VELMORA</a>
+          <p id="footerDescription"></p>
+        </div>
+        <div class="footer-links">
+          <a href="#" id="shippingLink">Shipping</a>
+          <a href="#" id="returnsLink">Returns</a>
+          <a href="#" id="privacyLink">Privacy</a>
+          <a href="#" id="termsLink">Terms</a>
+          <a href="#" id="contactLink">Contact</a>
+        </div>
+        <div>
+          <span class="footer-label">FOLLOW</span>
+          <div id="socialLinks" class="social-links"></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> VELMORA</span><button class="admin-trigger" id="adminTrigger">Store admin</button></div>
+    </footer>
+  </div>
+
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-head"><h2>Your Bag</h2><button class="icon-btn" data-close="cartDrawer">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>Subtotal</span><strong id="cartTotal"></strong></div>
+      <button class="btn btn-primary full" id="checkoutBtn">Checkout</button>
+      <button class="text-btn full" id="continueShopping">Continue shopping</button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-card product-detail">
+      <button class="modal-close" data-close="productModal">×</button>
+      <div id="productDetailContent"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-card checkout-card">
+      <button class="modal-close" data-close="checkoutModal">×</button>
+      <div id="checkoutContent"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="mobileNavModal" aria-hidden="true">
+    <div class="modal-card nav-card">
+      <button class="modal-close" data-close="mobileNavModal">×</button>
+      <div class="mobile-nav-links" id="mobileNavLinks"></div>
+    </div>
+  </div>
+
+  <div class="admin-shell hidden" id="adminShell">
+    <div class="admin-login" id="adminLogin">
+      <div class="login-card">
+        <span class="eyebrow">VELMORA ADMIN</span>
+        <h2>Store control</h2>
+        <p>Prototype PIN access. Replace this with real authentication before production.</p>
+        <input id="adminPin" type="password" inputmode="numeric" placeholder="Enter admin PIN" maxlength="32">
+        <button class="btn btn-primary full" id="loginBtn">Enter dashboard</button>
+        <button class="text-btn full" id="closeAdminLogin">Back to store</button>
+        <small id="loginError" class="error"></small>
+      </div>
+    </div>
+
+    <div class="admin-app hidden" id="adminApp">
+      <aside class="admin-sidebar">
+        <div class="admin-logo">VELMORA <span>CONTROL</span></div>
+        <button class="admin-tab active" data-tab="overview">Overview</button>
+        <button class="admin-tab" data-tab="products">Products</button>
+        <button class="admin-tab" data-tab="orders">Orders</button>
+        <button class="admin-tab" data-tab="branding">Branding</button>
+        <button class="admin-tab" data-tab="design">Design</button>
+        <button class="admin-tab" data-tab="homepage">Homepage</button>
+        <button class="admin-tab" data-tab="payment">Payment</button>
+        <button class="admin-tab" data-tab="shipping">Shipping</button>
+        <button class="admin-tab" data-tab="seo">SEO</button>
+        <button class="admin-tab" data-tab="social">Social</button>
+        <button class="admin-tab" data-tab="backup">Backup</button>
+        <button class="admin-tab" data-tab="settings">Settings</button>
+        <button class="admin-exit" id="exitAdmin">Exit</button>
+      </aside>
+      <section class="admin-main">
+        <div class="admin-top"><div><span class="eyebrow">STORE CONTROL</span><h1 id="adminTitle">Overview</h1></div><button class="btn btn-secondary" id="previewStore">Preview store</button></div>
+        <div id="toast" class="toast"></div>
+        <div id="adminContent"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
