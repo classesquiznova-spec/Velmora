@@ -14,7 +14,7 @@ const VELMORA_DEFAULTS = {
   shipping:{countries:"UK, Europe, USA, Australia",shippingText:"Shipping availability depends on destination and fulfillment partner.",deliveryText:"Estimated delivery times vary by destination and supplier.",returnsText:"Returns are subject to the store return policy."},
   payment:{gateway:"PayPal",currency:"USD",publicKey:"",checkoutEndpoint:"",online:true,cod:false},
   profit:{paymentFeePercent:2.9,paymentFixed:0.30},
-  theme:{preset:"minimal",primary:"#0d1726",accent:"#7697bb",background:"#f5f3ee",text:"#182131",card:"#ffffff",radius:18,button:"pill",font:"Inter"},
+  theme:{preset:"custom",primary:"#9b7cff",accent:"#2dd4bf",background:"#080d18",text:"#e8edf7",card:"#111827",radius:22,button:"pill",font:"Inter"},
   homepage:{featuredOnly:true},
   admin:{pin:"2468"},
   products:[
