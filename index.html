@@ -96,7 +96,7 @@
           <div id="socialLinks" class="social-links"></div>
         </div>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> VELMORA</span><button class="admin-trigger" id="adminTrigger">Store admin</button></div>
+      <div class="footer-bottom"><span>© <span id="year"></span> VELMORA</span></div>
     </footer>
   </div>
 
@@ -132,46 +132,9 @@
     </div>
   </div>
 
-  <div class="admin-shell hidden" id="adminShell">
-    <div class="admin-login" id="adminLogin">
-      <div class="login-card">
-        <span class="eyebrow">VELMORA ADMIN</span>
-        <h2>Store control</h2>
-        <p>Prototype PIN access. Replace this with real authentication before production.</p>
-        <input id="adminPin" type="password" inputmode="numeric" placeholder="Enter admin PIN" maxlength="32">
-        <button class="btn btn-primary full" id="loginBtn">Enter dashboard</button>
-        <button class="text-btn full" id="closeAdminLogin">Back to store</button>
-        <small id="loginError" class="error"></small>
-      </div>
-    </div>
 
-    <div class="admin-app hidden" id="adminApp">
-      <aside class="admin-sidebar">
-        <div class="admin-logo">VELMORA <span>CONTROL</span></div>
-        <button class="admin-tab active" data-tab="overview">Overview</button>
-        <button class="admin-tab" data-tab="products">Products</button>
-        <button class="admin-tab" data-tab="orders">Orders</button>
-        <button class="admin-tab" data-tab="branding">Branding</button>
-        <button class="admin-tab" data-tab="design">Design</button>
-        <button class="admin-tab" data-tab="homepage">Homepage</button>
-        <button class="admin-tab" data-tab="payment">Payment</button>
-        <button class="admin-tab" data-tab="shipping">Shipping</button>
-        <button class="admin-tab" data-tab="seo">SEO</button>
-        <button class="admin-tab" data-tab="social">Social</button>
-        <button class="admin-tab" data-tab="backup">Backup</button>
-        <button class="admin-tab" data-tab="settings">Settings</button>
-        <button class="admin-exit" id="exitAdmin">Exit</button>
-      </aside>
-      <section class="admin-main">
-        <div class="admin-top"><div><span class="eyebrow">STORE CONTROL</span><h1 id="adminTitle">Overview</h1></div><button class="btn btn-secondary" id="previewStore">Preview store</button></div>
-        <div id="toast" class="toast"></div>
-        <div id="adminContent"></div>
-      </section>
-    </div>
-  </div>
 
   <script src="data.js"></script>
-  <script src="app.js"></script>
-  <script src="admin.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script><script src="app.js"></script>
 </body>
 </html>
